@@ -1,1 +1,41 @@
 notes
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Accesing JSONP data
+
+Title of Class - cleanedCourses[0].gsx$title.$t
+
+Course in format "AFR 207 - 01" - cleanedCourses[0].gsx$course.$t
+
+CRN number - cleanedCourses[0].gsx$crn.$t
+
+Current enrollment - cleanedCourses[0].gsx$currentenrollment.$t
+
+Distributions in list delimeted by commas - cleanedCourses[0].gsx$distributions.$t
+
+Meeting times in format "07:00 pm - 09:30 pm" - cleanedCourses[0].gsx$meetingtimes.$t
+
+Seats available "0008↵8 / 30" - cleanedCourses[0].gsx$seatsavailable.$t
+
+Days it meets "2↵TF" - cleanedCourses[0].gsx$days.$t
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GIT
+
+add files to your commit queue (to be committed)
+  git add filename    #adds single file
+  git add .           #adds all modified files in folder
+  
+commit your changes to master so others can see it
+  git commit -m 'your summary message'
+  
+Push your commit to master (actually sends the commit to github)
+  git push origin master
+  
+Pull down new changes from master
+  git pull
+  
+  
+  

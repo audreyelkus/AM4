@@ -1,4 +1,48 @@
 <!DOCTYPE html>
+
+
+<html>
+  <head>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <script>
+      function appendResults(text) {
+        var results = document.getElementById('results');
+        results.appendChild(document.createElement('P'));
+        results.appendChild(document.createTextNode(text));
+      }
+    
+
+      function makeRequest() {
+        var request = gapi.client.urlshortener.url.get({
+          'shortUrl': 'http://goo.gl/fbsS'
+        });
+        request.then(function(response) {
+          appendResults(response.result.longUrl);
+        }, function(reason) {
+          console.log('Error: ' + reason.result.error.message);
+        });
+      }
+
+      function init() {
+        gapi.client.setApiKey('AIzaSyDRnbG6oZX51L5TlAe1XS4ch8kOg-0tpDI');
+        gapi.client.load('urlshortener', 'v1').then(makeRequest);
+      }
+    </script>
+      
+      <!--  loads the JS Client library and registers an onload handler which fires when the library has finished loading: --!> </-->
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+  </head>
+  <body> 
+       <iframe src="https://www.google.com/calendar/embed?tab=mc#h"
+
+style=border:"0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <div id="results"></div>
+    
+    <script src="AM4.js"></script>
+  </body>
+
+<!--
 <head>
 
 <title>Wellesley Course Finder</title>
@@ -38,6 +82,7 @@
 
    </head>
 <body>
+<<<<<<< HEAD
    <div id="accordion-1">
       <h3>About</h3>
    <div>
@@ -56,6 +101,15 @@
       <p>
          Calendar tab content    
       </p>
+=======
+    <div id="header">
+        <h1>Wellesley Course Finder</h1>
+-->
+        
+        <!--Future Description to be placed here-->
+<!--
+        <p></p>
+>>>>>>> origin/master
     </div>
    <h3>Map</h3>
    <div>
@@ -66,7 +120,7 @@
    </div>
     
     
-    <!--Three components in main-->
+    Three components in main
     <div id="main">
         <div id="departmentSearch">
         </div>
@@ -80,3 +134,4 @@
 </body>
 
 </html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+-->
