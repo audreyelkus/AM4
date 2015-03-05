@@ -4,7 +4,8 @@
 
 <html>
   <head>
-      
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
     <script>
       function appendResults(text) {
         var results = document.getElementById('results');
@@ -32,13 +33,14 @@
       
       <!--  loads the JS Client library and registers an onload handler which fires when the library has finished loading: --!> </-->
     <script src="https://apis.google.com/js/client.js?onload=init"></script>
-      <script src="AM4.js"></script>
   </head>
   <body> 
        <iframe src="https://www.google.com/calendar/embed?tab=mc#h"
 
 style=border:"0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     <div id="results"></div>
+    
+    <script src="AM4.js"></script>
   </body>
 
 <!--
