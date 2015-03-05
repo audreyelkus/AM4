@@ -40,8 +40,31 @@
 
     });
     
-    var cleanedCourses; // global variable
-    function processCourses(allCourses){     
-      cleanedCourses = allCourses;
+    // global variables
+    var coursesByDept;
+    var coursesByReq;
+    var coursesByTime;
+
+    function processCourses(allCourses){  
+      
+      for (i in allCourses) {
+        
+        var course = new Object();
+        course.title = allCourses[i].gsx$title.$t;
+        course.shortTitle = allCourses[i].gsx$course.$t;
+        course.crn = allCourses[i].gsx$crn.$t;
+        course.curEnroll = allCourses[i].gsx$currentenrollment.$t
+
+        course.distReqs = allCourses[i].gsx$distributions.$t.replace("------------------------------\n", "");
+        course.meetTimes = allCourses[i].gsx$meetingtimes.$t
+
+        course.seatsAvail = allCourses[i].gsx$seatsavailable.$t
+        course.days = allCourses[i].gsx$days.$t
+        
+        console.log(course);
+        
+        
+      }
+      
     }
   
