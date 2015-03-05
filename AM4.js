@@ -13,8 +13,9 @@ $.getJSON("https://spreadsheets.google.com/feeds/list/1035SQBywbuvWHoVof3G-VI0ra
     
   var cleanedCourses; // global variable
     function processCourses(allCourses){     
-      // your code for getting the desirced information from each course
-  }
+
+    cleanedCourses = allCourses;
+    }
 
 
 
