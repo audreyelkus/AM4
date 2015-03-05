@@ -1,6 +1,6 @@
 @@ -1,6 +1,33 @@
 <!DOCTYPE html>
-<!--
+
 
 <html>
   <head>
@@ -11,6 +11,7 @@
         results.appendChild(document.createElement('P'));
         results.appendChild(document.createTextNode(text));
       }
+    
 
       function makeRequest() {
         var request = gapi.client.urlshortener.url.get({
@@ -28,6 +29,8 @@
         gapi.client.load('urlshortener', 'v1').then(makeRequest);
       }
     </script>
+      
+      <!--  loads the JS Client library and registers an onload handler which fires when the library has finished loading: --!> </-->
     <script src="https://apis.google.com/js/client.js?onload=init"></script>
       <script src="AM4.js"></script>
   </head>
@@ -37,7 +40,8 @@
 style=border:"0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     <div id="results"></div>
   </body>
--->
+
+<!--
 <head>
 
 <title>Wellesley Course Finder</title>
@@ -52,15 +56,17 @@ style=border:"0" width="800" height="600" frameborder="0" scrolling="no"></ifram
 <body>
     <div id="header">
         <h1>Wellesley Course Finder</h1>
+-->
         
         <!--Future Description to be placed here-->
+<!--
         <p></p>
     </div>
     
     <div id="sidebar">
     </div>
     
-    <!--Three components in main-->
+    Three components in main
     <div id="main">
         <div id="departmentSearch">
         </div>
@@ -74,3 +80,4 @@ style=border:"0" width="800" height="600" frameborder="0" scrolling="no"></ifram
 </body>
 
 </html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+-->
