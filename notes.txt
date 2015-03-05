@@ -1,1 +1,29 @@
 notes
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Accesing JSONP data
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GIT
+
+add files to your commit queue (to be committed)
+  git add filename    #adds single file
+  git add .           #adds all modified files in folder
+  
+commit your changes to master so others can see it
+  git commit -m 'your summary message'
+  
+Push your commit to master (actually sends the commit to github)
+  git push origin master
+  
+Pull down new changes from master
+  git pull
+  
+  
+  
