@@ -23,8 +23,6 @@ request.execute(function(resp) {
 
 
 
-
-
 // CODE FROM ENI    
 // this code should go in a separate Javascript file  
   $.getJSON("https://spreadsheets.google.com/feeds/list/1035SQBywbuvWHoVof3G-VI0rapYJslaeYN5tTpNZq2M/od6/public/values?alt=json-in-script&gid=0&callback=?",
