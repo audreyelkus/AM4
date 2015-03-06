@@ -41,10 +41,18 @@
     });
     
     // global variables
-    var coursesByDept = {CS:"Computer Science CS", lastName:"Doe", age:50, eyeColor:"blue"};
-    var coursesByReq = {Cognition:[], HistoricalStudies: [], LanguageAndLit: [], MathModeling:[], NaturalScience:[],
-                       BasicQR: [], QROverlay: [], Religion: [], SBA: [], Art: [], FYW: []};
-    var coursesByLevel = {AFR: [], AMST:[], ANTH:[], ARAB:[], };
+    var coursesByDept = {AFR: [], AMST:[], ANTH:[], ARAB:[], ARTH:[], ARTS: [], ASTR: [], BIOC: [], BISC: [],
+                         CAMS: [], CHEM:[], CHIN:[], CLCV:[], CLSC:[], CPLT:[], CS:[], ECON:[], EDUC: [],
+                         ENG: [], ES: [], EXTD: [], FREN:[], GEOS:[], GER:[], GRK:[], HEBR: [], HNUR: [],
+                         HIST: [], ITAS: [], JPN: [], KOR: [], LAT:[], LING:[], MER:[], MATH:[], MES:[], MUS:[],
+                         NEUR: [], PEAC: [], PHIL: [], PHYS: [], POL: [], POL1:[], POL2:[], POL3:[], POL4:[],
+                         PORT:[], PSYC:[], QR: [], REL:[], RUSS: [], SAS: [], SOC: [], SPAN: [], SUST:[],
+                         SWA:[], THST:[], WGST:[], WRIT:[]};
+    var coursesByReq = { "Epistemology and Cognition":[], "Historical Studies": [], "Language and Literature": [],
+                        "Mathematical Modeling":[], "Natural and Physical Science":[], "Basic QR": [], "QR Overlay": [],
+                        "Religion, Ethics and Moral Philosophy": [], "Social and Behavioral Analysis": [], 
+                        "Arts, Music, Theatre, Film and Video": []};
+    var coursesByLevel = new Object();
     var coursesByTime = new Object();
     var thingy;
 
@@ -59,7 +67,7 @@
         course.curEnroll = allCourses[i].gsx$currentenrollment.$t
 
         course.distReqs = allCourses[i].gsx$distributions.$t.replace("------------------------------\n", "");
-        
+        course.distReqs = course.distReqs.replace("↵", "\n");
         course.meetTimes = allCourses[i].gsx$meetingtimes.$t
 
         course.seatsAvail = allCourses[i].gsx$seatsavailable.$t
@@ -69,86 +77,56 @@
         
         var distRe = course.distReqs
         
-        //Fill courses by Req
-        if (distRe.indexOf("Epistemology and Cognition") >= 0) {
-          coursesByReq["Cognition"].push(course);
-        }
-        if (distRe.indexOf("Historical Studies") >= 0) {
-          coursesByReq["HistoricalStudies"].push(course);
-        }
-        if (distRe.indexOf("Language and Literature") >= 0) {
-          coursesByReq["LanguageAndLit"].push(course);
-        }
-        if (distRe.indexOf("Mathematical Modeling") >= 0) {
-          coursesByReq["MathModeling"].push(course);
-        }
-        if (distRe.indexOf("Natural and Physical Science") >= 0) {
-          coursesByReq["NaturalScience"].push(course);
-        }
-        if (distRe.indexOf("Basic QR") >= 0) {
-          coursesByReq["BasicQR"].push(course);
-        }
-        if (distRe.indexOf("QR Overlay") >= 0) {
-          coursesByReq["QROverlay"].push(course);
-        }
-        if (distRe.indexOf("Religion, Ethics and Moral Philosophy") >= 0) {
-          coursesByReq["Religion"].push(course);
-        }
-        if (distRe.indexOf("Social and Behavioral Analysis") >= 0) {
-          coursesByReq["SBA"].push(course);
-        }
-        if (distRe.indexOf("Arts, Music, Theatre, Film and Video") >= 0) {
-          coursesByReq["Art"].push(course);
-        }
+        //Sort by Distribution Requirements
+        //key="Epistemology and Cognition" value = "Cognition
+        
+        
+//        distRe. split loop through splits
+//        for(){
+//          coursesByReq[distRe].push(course); 
+//        }
+      
         if (distRe.indexOf("First-Year Writing") >= 0) {
           coursesByReq["FYW"].push(course);
         }
         
         
+        //Sort by Department
         var short = course.shortTitle;
         
         if (short.indexOf("WRIT") >= 0) {
-          coursesByDept["Cognition"].push(course);
+          coursesByDept["WRIT"].push(course);
         }
-        if (short.indexOf("Historical Studies") >= 0) {
-          coursesByDept["HistoricalStudies"].push(course);
+        if (short.indexOf("WRIT") >= 0) {
+          coursesByDept["WRIT"].push(course);
         }
-        if (short.indexOf("Language and Literature") >= 0) {
-          coursesByDept["LanguageAndLit"].push(course);
+        if (short.indexOf("WRIT") >= 0) {
+          coursesByDept["WRIT"].push(course);
         }
-        if (short.indexOf("Mathematical Modeling") >= 0) {
-          coursesByDept["MathModeling"].push(course);
+        if (short.indexOf("WRIT") >= 0) {
+          coursesByDept["WRIT"].push(course);
         }
-        if (short.indexOf("Natural and Physical Science") >= 0) {
-          coursesByDept["NaturalScience"].push(course);
+        if (short.indexOf("WRIT") >= 0) {
+          coursesByDept["WRIT"].push(course);
         }
-        if (short.indexOf("Basic QR") >= 0) {
-          coursesByDept["BasicQR"].push(course);
+        if (short.indexOf("WRIT") >= 0) {
+          coursesByDept["WRIT"].push(course);
         }
-        if (short.indexOf("QR Overlay") >= 0) {
-          coursesByDept["QROverlay"].push(course);
-        }
-        if (short.indexOf("Religion, Ethics and Moral Philosophy") >= 0) {
-          coursesByDept["Religion"].push(course);
-        }
-        if (short.indexOf("Social and Behavioral Analysis") >= 0) {
-          coursesByDept["SBA"].push(course);
-        }
-        if (short.indexOf("Arts, Music, Theatre, Film and Video") >= 0) {
-          coursesByDept["Art"].push(course);
-        }
-        if (short.indexOf("First-Year Writing") >= 0) {
-          coursesByDept["FYW"].push(course);
+        if (short.indexOf("WRIT") >= 0) {
+          coursesByDept["WRIT"].push(course);
         }
         
-        
-        
-      
               
         
       }
       
       console.log(coursesByReq);
+      
+      
+      //search functionality
+      //if (x.search("Modeling")) { console.log(coursesByReq["MathModeling"]);};
+      
+      
       
     }
   
