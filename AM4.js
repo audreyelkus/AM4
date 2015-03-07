@@ -77,52 +77,21 @@
         
         console.log(course);
         
-        cleanCourses.push(course)
+        var crn = course.crn;
         
-        //Sort by Distribution Requirements
-        //key="Epistemology and Cognition" value = "Cognition
+        cleanCourses[crn] = course;
+
         
-        
-//        distRe. split loop through splits
-//        for(){
-//          coursesByReq[distRe].push(course); 
-//        }
-      
-        if (distRe.indexOf("First-Year Writing") >= 0) {
-          coursesByReq["FYW"].push(course);
-        }
+        //when search by dept
+        //loop through crn looking for match for dept
+        //if second condition
+        //loop through subset array that matches 1st condition
         
         
-        //Sort by Department
-        var short = course.shortTitle;
-        
-        if (short.indexOf("WRIT") >= 0) {
-          coursesByDept["WRIT"].push(course);
-        }
-        if (short.indexOf("WRIT") >= 0) {
-          coursesByDept["WRIT"].push(course);
-        }
-        if (short.indexOf("WRIT") >= 0) {
-          coursesByDept["WRIT"].push(course);
-        }
-        if (short.indexOf("WRIT") >= 0) {
-          coursesByDept["WRIT"].push(course);
-        }
-        if (short.indexOf("WRIT") >= 0) {
-          coursesByDept["WRIT"].push(course);
-        }
-        if (short.indexOf("WRIT") >= 0) {
-          coursesByDept["WRIT"].push(course);
-        }
-        if (short.indexOf("WRIT") >= 0) {
-          coursesByDept["WRIT"].push(course);
-        }
-        
-              
         
       }
       
-      console.log(coursesByReq);
+      console.log(cleanCourses);
       
       
       //search functionality
