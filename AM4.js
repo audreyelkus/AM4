@@ -42,6 +42,7 @@
     
 // global variables
 var cleanCourses = new Object();
+var results =  new Array();
 
 function processCourses(allCourses){  
   for (i in allCourses) {
@@ -78,7 +79,6 @@ $('#distributions').bind('click', search);
 
 function search()
 {
-  var results =  new Array();
   var results1 = new Array();
   var results2 = new Array();
   
@@ -116,9 +116,9 @@ function search()
 
 $.intersection = function(results1, results2)
 {
-    return $.grep(results1, function(i)
+    return $.grep(results1, function(i) //grep filters an array by a function
     {
-        return $.inArray(i, results2) > -1;
+        return $.inArray(i, results2) > -1; //
     });
 };
 
