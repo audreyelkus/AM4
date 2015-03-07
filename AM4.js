@@ -125,15 +125,25 @@ function search()
 
  function holdResults(results) {
         //creatives div with all the results - intersection of results 1 and 2 - in it.
-        // how to test this w/o a "on Submit Button click" 
         var table = document.createElement('table');
+        console.log("hi!!")   
         table.className = "RESULTS"; 
         
-    for (i in results) {
-            innerHTML = results[i].className
+        
+    for (i = 0; i < results.length; i++) {
             var row = document.createElement('tr');
-            tr.innerHTML = "<td>" + results[i].title + "</td> <td>" + results[i].shortTitle + "</td>               <td>" + results[i].crn + "</td> <td>" + results[i].curEnroll + "</td>"
-            
+            row.innerHTML = "<td>" + results[i].title + "</td> <td>" + results[i].shortTitle + "</td>               <td>" + results[i].crn + "</td> <td>" + results[i].curEnroll + "</td>"
+            table.appendChild(row);
+        
+    
+        
+//            var p = document.createElement('p');
+//            p.innerHTML = 'test'
+//            document.appendChild(p);
+       console.log(table)     
+    } $("#results").appendChild(table);}
+
+$('#search_button').bind('click', holdResults);
 
 
 $.intersection = function(results1, results2)
