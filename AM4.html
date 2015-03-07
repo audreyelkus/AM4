@@ -4,6 +4,12 @@
     <title>Wellesley Course Finder</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="AM4.css">
+      
+    <!--Boostrap CSS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.2/spacelab/bootstrap.min.css"           rel="stylesheet">
       
     <!--     jQUERY -->
 <!--    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
@@ -36,22 +42,7 @@
     </script>
 -->
             
-      <!--Bootstrap decorations-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.2/united/bootstrap.min.css"           rel="stylesheet">
 
-    <!--Tabs-->
-    <title>jQuery UI Accordion - Default functionality</title>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script>
-    $(function() {
-    $( "#accordion" ).accordion();
-  });
-    </script>
       <!--  loads the JS Client library and registers an onload handler which fires when the library has finished loading: --!> </-->
 <!--
     <script src="https://apis.google.com/js/client.js?onload=init"></script>
@@ -63,46 +54,25 @@
 <!--  Start of webpage body-->
   
 <body> 
-    <div id="header">
-        <h1>Wellesley Course Finder</h1>
-    </div>
-        <h3>Map</h3>
-    <div>
-        <p>
-         Map tab content    
-      </p>
-    </div>
-    </div>
-        Three components in main
-    <div id="main">
-    <div id="departmentSearch">
-    </div>
-        
-    <div id="reqSearch">
-    </div>
-        
-    <div id="results">
-    </div>   
-    </div>
+    
+    <!--Navbar-->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Wellesley Course Finder</a>
+        </div>
+           <img src="logo.png" alt="Logo" height="42" width="42">
 
-    <div id="accordion-1">
-      <h3>About</h3>
-    <div>
-      <p>
-         About tab content 
-      </p>
-    </div>
-        <h3>Find</h3>
-    <div>
-      <p>
-         Find tab content     
-      </p>
-    </div>
-        <h3>Calendar</h3>
-    <div>
-        <p>
-         Calendar tab content    
-        </p> </div>
+        <div class="navbar-right">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">About</a></li>
+            <li><a href="#">Finder</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
       
         <form id = "courseSelect">
 				<select id="department" class="searchbox" multiple size="5">
@@ -208,13 +178,4 @@
 
 
 
-<!-- DIANA PLZ CHECK THIS OUT BEFORE WE DELETE 
-<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
-      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-      <script>
-         $(function() {
-            $( "#accordion-1" ).accordion();
-         });
-      </script>
--->
+
