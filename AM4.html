@@ -3,6 +3,12 @@
 
 <html>
   <head>
+      
+    <title>Wellesley Course Finder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+<!--     jQUERY -->
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <script>
@@ -30,15 +36,72 @@
       }
     </script>
       
+      
+      <!--Bootstrap decorations-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.2/united/bootstrap.min.css" rel="stylesheet">
+
+<!--Tabs-->
+<title>jQuery UI Accordion - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#accordion" ).accordion();
+  });
+  </script>
       <!--  loads the JS Client library and registers an onload handler which fires when the library has finished loading: --!> </-->
     <script src="https://apis.google.com/js/client.js?onload=init"></script>
+      <link href="AM4.css" rel="stylesheet">
   </head>
   
   
 <!--  Start of webpage body-->
   
   <body> 
-      
+       <div id="header">
+       <h1>Wellesley Course Finder</h1>
+            </div>
+   <h3>Map</h3>
+   <div>
+      <p>
+         Map tab content    
+      </p>
+   </div>
+   </div>
+    Three components in main
+    <div id="main">
+        <div id="departmentSearch">
+        </div>
+        
+        <div id="reqSearch">
+        </div>
+        
+        <div id="results">
+        </div>   
+    </div>
+
+       <div id="accordion-1">
+      <h3>About</h3>
+   <div>
+      <p>
+         About tab content 
+      </p>
+   </div>
+   <h3>Find</h3>
+   <div>
+      <p>
+         Find tab content     
+      </p>
+   </div>
+   <h3>Calendar</h3>
+   <div>
+      <p>
+         Calendar tab content    
+       </p> </div>
       
       <form id = "courseSelect">
 				<select id="department" class="searchbox" multiple size="5">
@@ -120,7 +183,7 @@
 				<option>None
 				</select>
      
-				</select> -->
+				</select> 
 				<button class="button" id="searchFieldButton" type="button" onclick = "search()">Search</button> 
 
        <iframe src="https://www.google.com/calendar/embed?tab=mc#h"
@@ -129,7 +192,7 @@ style=border:"0" width="800" height="600" frameborder="0" scrolling="no"></ifram
     <div id="results"></div>
     
     <script src="AM4.js"></script>
-  </body>
+           </body> </html>
 
 
 
@@ -143,50 +206,8 @@ style=border:"0" width="800" height="600" frameborder="0" scrolling="no"></ifram
 
 
 
-<!--
-<head>
-
-<title>Wellesley Course Finder</title>
-    <title>Wellesley Course Finder</title>
-   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link href="AM4.css" rel="stylesheet">
-
-<!--Bootstrap decorations-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  <link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.2/united/bootstrap.min.css" rel="stylesheet">
-
-<!--Tabs-->
-<title>jQuery UI Accordion - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script>
-  $(function() {
-    $( "#accordion" ).accordion();
-  });
-  </script>
-</head>
-
-
-
-
-
-
-
-
-<body>
- 
-  
-  
-  
-  
-  
-  
- <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+<!-- DIANA PLZ CHECK THIS OUT BEFORE WE DELETE 
+<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
       <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
       <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
       <script>
@@ -194,59 +215,4 @@ style=border:"0" width="800" height="600" frameborder="0" scrolling="no"></ifram
             $( "#accordion-1" ).accordion();
          });
       </script>
-
-   </head>
-<body>
-<<<<<<< HEAD
-   <div id="accordion-1">
-      <h3>About</h3>
-   <div>
-      <p>
-         About tab content 
-      </p>
-   </div>
-   <h3>Find</h3>
-   <div>
-      <p>
-         Find tab content     
-      </p>
-   </div>
-   <h3>Calendar</h3>
-   <div>
-      <p>
-         Calendar tab content    
-      </p>
-=======
-    <div id="header">
-        <h1>Wellesley Course Finder</h1>
--->
-        
-        <!--Future Description to be placed here-->
-<!--
-        <p></p>
->>>>>>> origin/master
-    </div>
-   <h3>Map</h3>
-   <div>
-      <p>
-         Map tab content    
-      </p>
-   </div>
-   </div>
-    
-    
-    Three components in main
-    <div id="main">
-        <div id="departmentSearch">
-        </div>
-        
-        <div id="reqSearch">
-        </div>
-        
-        <div id="results">
-        </div>   
-    </div>
-</body>
-
-</html>
 -->
