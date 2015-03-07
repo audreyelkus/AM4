@@ -46,33 +46,30 @@ var results =  new Array();
 
 function processCourses(allCourses){  
   for (i in allCourses) {
-        
-        var course = new Object();
-        course.title = allCourses[i].gsx$title.$t;
-        course.shortTitle = allCourses[i].gsx$course.$t;
-        course.crn = allCourses[i].gsx$crn.$t;
-        course.curEnroll = allCourses[i].gsx$currentenrollment.$t;
+    var course = new Object();
+    course.title = allCourses[i].gsx$title.$t;
+    course.shortTitle = allCourses[i].gsx$course.$t;
+    course.crn = allCourses[i].gsx$crn.$t;
+    course.curEnroll = allCourses[i].gsx$currentenrollment.$t;
 
-                 
-        // REGEX WORKS
-        course.distReqs = allCourses[i].gsx$distributions.$t.replace(/-/g, "").replace(/\n/g, "");
-       
-        course.meetTimes = allCourses[i].gsx$meetingtimes.$t;
 
-        course.seatsAvail = allCourses[i].gsx$seatsavailable.$t;
-        course.days = allCourses[i].gsx$days.$t;
+    // REGEX WORKS
+    course.distReqs = allCourses[i].gsx$distributions.$t.replace(/-/g, "").replace(/\n/g, "");
+
+    course.meetTimes = allCourses[i].gsx$meetingtimes.$t;
+
+    course.seatsAvail = allCourses[i].gsx$seatsavailable.$t;
+    course.days = allCourses[i].gsx$days.$t;
+
+    console.log(course);
+
+    var crn = course.crn;
+
+    cleanCourses[crn] = course;
         
-        console.log(course);
-        
-        var crn = course.crn;
-        
-        cleanCourses[crn] = course;
-        
-      }
-      
-      console.log(cleanCourses);
-      
-    }
+  }   
+  console.log(cleanCourses);
+}
 
 $('#department').bind('click', search);
 $('#distributions').bind('click', search);
@@ -101,27 +98,14 @@ function search()
     if (cleanCourses[i].distReqs.indexOf(distChoice) >= 0) {
       results2.push(cleanCourses[i]);
     }
-    
-//    for i in results { 
-      //create element td, set innerHTML = results[i].className (or title or something
-  //    wanna create one table row for the whole class, one column will b CRN number, one will be department 
-      //vardiv = document.createElement 
-       // divname.appendChild(results) 
   }
   
-   
-            
-    
   console.log(results1);
   console.log(results2);
 
   results = $.intersection(results1, results2);
-  console.log(results);
-  
-	
-}
-
-
+  console.log(results);	
+} // end of search function
 
  function holdResults(results) {
         //creatives div with all the results - intersection of results 1 and 2 - in it.
