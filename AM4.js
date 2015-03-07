@@ -1,4 +1,36 @@
 
+//from the course example
+
+
+function search()
+{
+	//First, clear the classes:
+	document.getElementById('coursesPossible').innerHTML= '   ';
+	if (((document.getElementById("department").selectedIndex) == 0) || 
+		((document.getElementById("distributions").selectedIndex) == 0)) {
+		$.getJSON("courses.json", function (data) {
+    		var items = [];
+    		$.each(data, function(key, val) {
+    			items.push('<p class="singleCourse"><input type = "checkbox" class = "indentElement"class = "selected" id = "' 
+						+ key + '" value = "' + val.Course + '">' 
+    					  	+ val.CRN + ': ' + val.Course + ': ' + val.Title + ': ' + " Prof. " 
+						+ val.Instructors + " : " + val.Days + ': ' + val.Times[0] + '-' 
+						+ val.Times[1] + '</p>'); 
+    			});
+		$('<form/>', {'class': 'myCourses', 'class': 'indentElement', 'id': 'courseList', html: items.join('')
+			}).appendTo(document.getElementById('coursesPossible'));
+	});	
+		document.getElementById('department').options.selectedIndex = -1;
+		document.getElementById('distributions').options.selectedIndex = -1;
+	} else {
+	if ((document.getElementById("department").selectedIndex) > 0) {
+		searchHelper('department', 'departments.json');
+	} 
+	if ((document.getElementById("distributions").selectedIndex) > 0) {
+		searchHelper('distributions', 'distributions.json');
+	}
+	}	
+}
 //
 //
 //
@@ -24,6 +56,15 @@
 //  console.log(resp);
 //});
 //
+
+
+
+
+// working on regex ok so here's her example
+
+
+
+
 
 
 
@@ -68,8 +109,16 @@
         course.crn = allCourses[i].gsx$crn.$t;
         course.curEnroll = allCourses[i].gsx$currentenrollment.$t
 
-        course.distReqs = allCourses[i].gsx$distributions.$t.replace("------------------------------\n", "");
-        course.distReqs = course.distReqs.replace("↵", "\n");
+        
+         
+       
+                 
+        // REGEX WORKS
+        course.distReqs.match(/-/g)
+        course.distReqs.replace(/-/g, "")   
+          
+        course.distReqs.match(/\n/g)
+        course.distReqs.replace(/\n/g, "") 
         course.meetTimes = allCourses[i].gsx$meetingtimes.$t
 
         course.seatsAvail = allCourses[i].gsx$seatsavailable.$t
