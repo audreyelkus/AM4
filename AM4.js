@@ -107,22 +107,16 @@ function search()
         course.title = allCourses[i].gsx$title.$t;
         course.shortTitle = allCourses[i].gsx$course.$t;
         course.crn = allCourses[i].gsx$crn.$t;
-        course.curEnroll = allCourses[i].gsx$currentenrollment.$t
+        course.curEnroll = allCourses[i].gsx$currentenrollment.$t;
 
-        
-         
-       
                  
         // REGEX WORKS
-        course.distReqs.match(/-/g)
-        course.distReqs.replace(/-/g, "")   
-          
-        course.distReqs.match(/\n/g)
-        course.distReqs.replace(/\n/g, "") 
-        course.meetTimes = allCourses[i].gsx$meetingtimes.$t
+        course.distReqs = allCourses[i].gsx$distributions.$t.replace(/-/g, "").replace(/\n/g, "");
+       
+        course.meetTimes = allCourses[i].gsx$meetingtimes.$t;
 
-        course.seatsAvail = allCourses[i].gsx$seatsavailable.$t
-        course.days = allCourses[i].gsx$days.$t
+        course.seatsAvail = allCourses[i].gsx$seatsavailable.$t;
+        course.days = allCourses[i].gsx$days.$t;
         
         console.log(course);
         
