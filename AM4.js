@@ -11,7 +11,7 @@ function search()
 		$.getJSON("courses.json", function (data) {
     		var items = [];
     		$.each(data, function(key, val) {
-    			items.push('<p class="singleCourse"><input type = "checkbox" class = "indentElement"class = "selected" id = "' 
+    			items.push('<p class="singleCourse"><input type = "checkbox" class =                                     "indentElement"class = "selected" id = "' 
 						+ key + '" value = "' + val.Course + '">' 
     					  	+ val.CRN + ': ' + val.Course + ': ' + val.Title + ': ' + " Prof. " 
 						+ val.Instructors + " : " + val.Days + ': ' + val.Times[0] + '-' 
