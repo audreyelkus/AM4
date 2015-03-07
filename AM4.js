@@ -108,34 +108,51 @@
   
 //from the course example
 
+$('#department').bind('click', search);
+$('#distributions').bind('click', search);
 
 function search()
 {
-	//First, clear the classes:
-	document.getElementById('coursesPossible').innerHTML= '   ';
-	if (((document.getElementById("department").selectedIndex) == 0) || 
-		((document.getElementById("distributions").selectedIndex) == 0)) {
-		  $.getJSON("courses.json", function (data) {
-    		var items = [];
-    		$.each(data, function(key, val) {
-    			items.push('<p class="singleCourse"><input type = "checkbox" class = "indentElement"class = "selected" id = "' 
-						+ key + '" value = "' + val.Course + '">' 
-    					  	+ val.CRN + ': ' + val.Course + ': ' + val.Title + ': ' + " Prof. " 
-						+ val.Instructors + " : " + val.Days + ': ' + val.Times[0] + '-' 
-						+ val.Times[1] + '</p>'); 
-    			});
-		$('<form/>', {'class': 'myCourses', 'class': 'indentElement', 'id': 'courseList', html: items.join('')
-			}).appendTo(document.getElementById('coursesPossible'));
-	});	
-		document.getElementById('department').options.selectedIndex = -1;
-		document.getElementById('distributions').options.selectedIndex = -1;
-	} else {
-	if ((document.getElementById("department").selectedIndex) > 0) {
-		searchHelper('department', 'departments.json');
-	} 
-	if ((document.getElementById("distributions").selectedIndex) > 0) {
-		searchHelper('distributions', 'distributions.json');
-	}
-	}	
+  var results =  new Array();
+  var results1 = new Array();
+  var results2 = new Array();
+  
+  
+  var dept = document.getElementById('department');
+  var deptChoice = dept.options[dept.selectedIndex].text;
+  
+  var dist = document.getElementById('distributions');
+  var distChoice = dist.options[dist.selectedIndex].text;
+  
+  console.log(deptChoice);
+  console.log(distChoice);
+  
+  for(i in cleanCourses) {
+    if (cleanCourses[i].shortTitle.indexOf(deptChoice) >= 0) {
+      results1.push(cleanCourses[i]);
+    }
+    
+    if (cleanCourses[i].distReqs.indexOf(distChoice) >= 0) {
+      results2.push(cleanCourses[i]);
+    }
+    
+    
+  }
+  
+  console.log(results1);
+  console.log(results2);
+
+  results = $.intersection(results1, results2);
+  console.log(results);
+  
+	
 }
+
+$.intersection = function(results1, results2)
+{
+    return $.grep(results1, function(i)
+    {
+        return $.inArray(i, results2) > -1;
+    });
+};
 
