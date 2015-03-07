@@ -136,9 +136,16 @@ function search()
       results2.push(cleanCourses[i]);
     }
     
-    
+//    for i in results { 
+      //create element td, set innerHTML = results[i].className (or title or something
+  //    wanna create one table row for the whole class, one column will b CRN number, one will be department 
+      //vardiv = document.createElement 
+       // divname.appendChild(results) 
   }
   
+   
+            
+    
   console.log(results1);
   console.log(results2);
 
@@ -147,6 +154,21 @@ function search()
   
 	
 }
+
+
+
+ function holdResults(results) {
+        //creatives div with all the results - intersection of results 1 and 2 - in it.
+        // how to test this w/o a "on Submit Button click" 
+        var table = document.createElement('table');
+        table.className = "RESULTS"; 
+        
+    for (i in results) {
+            innerHTML = results[i].className
+            var row = document.createElement('tr');
+            tr.innerHTML = "<td>" + results[i].title + "</td> <td>" + results[i].shortTitle + "</td>               <td>" + results[i].crn + "</td> <td>" + results[i].curEnroll + "</td>"
+            
+
 
 $.intersection = function(results1, results2)
 {
