@@ -1,36 +1,3 @@
-
-//from the course example
-
-
-function search()
-{
-	//First, clear the classes:
-	document.getElementById('coursesPossible').innerHTML= '   ';
-	if (((document.getElementById("department").selectedIndex) == 0) || 
-		((document.getElementById("distributions").selectedIndex) == 0)) {
-		$.getJSON("courses.json", function (data) {
-    		var items = [];
-    		$.each(data, function(key, val) {
-    			items.push('<p class="singleCourse"><input type = "checkbox" class =                                     "indentElement"class = "selected" id = "' 
-						+ key + '" value = "' + val.Course + '">' 
-    					  	+ val.CRN + ': ' + val.Course + ': ' + val.Title + ': ' + " Prof. " 
-						+ val.Instructors + " : " + val.Days + ': ' + val.Times[0] + '-' 
-						+ val.Times[1] + '</p>'); 
-    			});
-		$('<form/>', {'class': 'myCourses', 'class': 'indentElement', 'id': 'courseList', html: items.join('')
-			}).appendTo(document.getElementById('coursesPossible'));
-	});	
-		document.getElementById('department').options.selectedIndex = -1;
-		document.getElementById('distributions').options.selectedIndex = -1;
-	} else {
-	if ((document.getElementById("department").selectedIndex) > 0) {
-		searchHelper('department', 'departments.json');
-	} 
-	if ((document.getElementById("distributions").selectedIndex) > 0) {
-		searchHelper('distributions', 'distributions.json');
-	}
-	}	
-}
 //
 //
 //
@@ -123,24 +90,52 @@ function search()
         var crn = course.crn;
         
         cleanCourses[crn] = course;
+        
+      }
+      
+      console.log(cleanCourses);
+      
+    }
 
+
+        
         
         //when search by dept
         //loop through crn looking for match for dept
         //if second condition
         //loop through subset array that matches 1st condition
         
-        
-        
-      }
-      
-      console.log(cleanCourses);
-      
-      
-      //search functionality
-      //if (x.search("Modeling")) { console.log(coursesByReq["MathModeling"]);};
-      
-      
-      
-    }
   
+//from the course example
+
+
+function search()
+{
+	//First, clear the classes:
+	document.getElementById('coursesPossible').innerHTML= '   ';
+	if (((document.getElementById("department").selectedIndex) == 0) || 
+		((document.getElementById("distributions").selectedIndex) == 0)) {
+		  $.getJSON("courses.json", function (data) {
+    		var items = [];
+    		$.each(data, function(key, val) {
+    			items.push('<p class="singleCourse"><input type = "checkbox" class = "indentElement"class = "selected" id = "' 
+						+ key + '" value = "' + val.Course + '">' 
+    					  	+ val.CRN + ': ' + val.Course + ': ' + val.Title + ': ' + " Prof. " 
+						+ val.Instructors + " : " + val.Days + ': ' + val.Times[0] + '-' 
+						+ val.Times[1] + '</p>'); 
+    			});
+		$('<form/>', {'class': 'myCourses', 'class': 'indentElement', 'id': 'courseList', html: items.join('')
+			}).appendTo(document.getElementById('coursesPossible'));
+	});	
+		document.getElementById('department').options.selectedIndex = -1;
+		document.getElementById('distributions').options.selectedIndex = -1;
+	} else {
+	if ((document.getElementById("department").selectedIndex) > 0) {
+		searchHelper('department', 'departments.json');
+	} 
+	if ((document.getElementById("distributions").selectedIndex) > 0) {
+		searchHelper('distributions', 'distributions.json');
+	}
+	}	
+}
+
