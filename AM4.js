@@ -54,6 +54,8 @@
                         "Arts, Music, Theatre, Film and Video": []};
     var coursesByLevel = new Object();
     var coursesByTime = new Object();
+
+    var cleanCourses = new Object();
     var thingy;
 
     function processCourses(allCourses){  
@@ -75,7 +77,7 @@
         
         console.log(course);
         
-        var distRe = course.distReqs
+        cleanCourses.push(course)
         
         //Sort by Distribution Requirements
         //key="Epistemology and Cognition" value = "Cognition
