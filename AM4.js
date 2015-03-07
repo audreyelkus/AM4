@@ -119,7 +119,7 @@ function search()
             row.innerHTML = "<td>" + results[i].title + "</td> <td>" + results[i].shortTitle + "</td>               <td>" + results[i].crn + "</td> <td>" + results[i].curEnroll + "</td>"
             table.appendChild(row);
         
-    
+    // why won't this display the results why 
         
 //            var p = document.createElement('p');
 //            p.innerHTML = 'test'
