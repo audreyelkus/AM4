@@ -2,8 +2,7 @@
 
 
 <html>
-  <head>
-      
+  <head>      
     <title>Wellesley Course Finder</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +10,7 @@
 <!--     jQUERY -->
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
+    <!-- Google Code   -->
     <script>
       function appendResults(text) {
         var results = document.getElementById('results');
@@ -35,8 +35,7 @@
         gapi.client.load('urlshortener', 'v1').then(makeRequest);
       }
     </script>
-      
-      
+            
       <!--Bootstrap decorations-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -56,7 +55,7 @@
       <!--  loads the JS Client library and registers an onload handler which fires when the library has finished loading: --!> </-->
     <script src="https://apis.google.com/js/client.js?onload=init"></script>
       <link href="AM4.css" rel="stylesheet">
-  </head>
+</head>
   
   
 <!--  Start of webpage body-->
