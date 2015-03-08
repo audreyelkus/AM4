@@ -1,17 +1,3 @@
-/* PART 1 - Authorization and login.
-
-// Global variables, the values come from the Developer Console
-//Put your OWN clientID and apiKey
-
-      
-      
-/* Function invoked when the client javascript library is loaded HEY GUYS THIS IS CODE FROME ENI MAYBE IT WILL MAKE THINGS WORK*/
-
-
-
-/* End of PART 1 - Authentication Process. */       
-
-
 //
 //
 //
