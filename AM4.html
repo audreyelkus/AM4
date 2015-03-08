@@ -4,50 +4,21 @@
     <title>Wellesley Course Finder</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-    <!--     jQUERY -->
-<!--    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
-
-    <!-- Google Code   -->
-<!--
-    <script>
-      function appendResults(text) {
-        var results = document.getElementById('results');
-        results.appendChild(document.createElement('P'));
-        results.appendChild(document.createTextNode(text));
-      }
-    
-
-      function makeRequest() {
-        var request = gapi.client.urlshortener.url.get({
-          'shortUrl': 'http://goo.gl/fbsS'
-        });
-        request.then(function(response) {
-          appendResults(response.result.longUrl);
-        }, function(reason) {
-          console.log('Error: ' + reason.result.error.message);
-        });
-      }
-
-      function init() {
-        gapi.client.setApiKey('AIzaSyDRnbG6oZX51L5TlAe1XS4ch8kOg-0tpDI');
-        gapi.client.load('urlshortener', 'v1').then(makeRequest);
-      }
-    </script>
--->
             
-      <!--Bootstrap decorations-->
+     <!--     jQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+          <!--Bootstrap decorations-->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.2/united/bootstrap.min.css"           rel="stylesheet">
 
-    <!--Tabs-->
-    <title>jQuery UI Accordion - Default functionality</title>
+    <!--JQuery Tabs-->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
-    <link rel="stylesheet" href="/resources/demos/style.css">
+    
+    <!--  stylesheets  -->
     <link rel="stylesheet" href="AM4.css">
+    
     <script>
     $(function() {
     $( "#accordion" ).accordion();
@@ -56,149 +27,151 @@
       <!--  loads the JS Client library and registers an onload handler which fires when the library has finished loading: --!> </-->
 <!--
     <script src="https://apis.google.com/js/client.js?onload=init"></script>
-    <link href="AM4.css" rel="stylesheet">
 -->
-</head>
+  </head>
   
   
-<!--  Start of webpage body-->
+  <!--  Start of webpage body-->
   
-<body> 
+  <body> 
     <div id="header">
         <h1>Wellesley Course Finder</h1>
     </div>
-        <h3>Map</h3>
     <div>
-        <p>
+      <p>
          Map tab content    
       </p>
     </div>
-    </div>
-        Three components in main
+    
     <div id="main">
-    <div id="departmentSearch">
-    </div>
+      <div id="departmentSearch"></div>
         
-    <div id="reqSearch">
-    </div>
+      <div id="reqSearch"></div>
   
     </div>
 
     <div id="accordion-1">
       <h3>About</h3>
-    <div>
-      <p>
-         About tab content 
-      </p>
-    </div>
-        <h3>Find</h3>
-    <div>
-      <p>
-         Find tab content     
-      </p>
-    </div>
-        <h3>Calendar</h3>
-    <div>
+      <div>
         <p>
-         Calendar tab content    
-        </p> </div>
+           About tab content 
+        </p>
+      </div>
       
-        <form id = "courseSelect">
-				<select id="department" class="searchbox" multiple size="5">
-				<!-- selected attribute makes ALL DEPARTMENTS the default value -->
-				<option selected="selected">ALL DEPARTMENTS 
-				<option>AFR
-				<option>AMST
-				<option>ANTH
-				<option>ARAB
-				<option>ARTH
-				<option>ARTS
-				<option>ASTR
-				<option>BIOC
-				<option>BISC
-				<option>CAMS
-				<option>CHEM
-				<option>CHIN
-				<option>CLCV
-				<option>CLSC
-				<option>CPLT
-				<option>CS
-				<option>ECON
-				<option>EDUC
-				<option>ENG
-				<option>ES
-				<option>EXTD
-				<option>FREN
-				<option>GEOS
-				<option>GER
-				<option>GRK
-				<option>HEBR
-				<option>HNUR
-				<option>HIST
-				<option>ITAS
-				<option>JPN
-				<option>KOR
-				<option>LAT
-				<option>LING
-				<option>MATH
-				<option>ME/R
-				<option>MES
-				<option>MUS
-				<option>NEUR
-				<option>PEAC
-				<option>PHIL
-				<option>PHYS
-				<option>POL
-				<option>POL1
-				<option>POL2
-				<option>POL3
-				<option>POL4
-				<option>PORT
-				<option>PSYC
-				<option>QR
-				<option>REL
-				<option>RUSS
-				<option>SAS
-				<option>SOC
-				<option>SPAN
-				<option>SUST
-				<option>SWA
-				<option>THST
-				<option>WGST
-				<option>WRIT
-				</select>
+      <h3>Find</h3>
+      <div>
+        <p>
+           Find tab content     
+        </p>
+      </div>
+      
+      <h3>Calendar</h3>
+        <div>
+          <p>
+            Calendar tab content    
+          </p> 
+        </div>
+    </div>
+    
+    <form id = "courseSelect">
+        <select id="department" class="searchbox" multiple size="5">
+            <!-- selected attribute makes ALL DEPARTMENTS the default value -->
+            <option selected="selected">ALL DEPARTMENTS 
+            <option>AFR
+            <option>AMST
+            <option>ANTH
+            <option>ARAB
+            <option>ARTH
+            <option>ARTS
+            <option>ASTR
+            <option>BIOC
+            <option>BISC
+            <option>CAMS
+            <option>CHEM
+            <option>CHIN
+            <option>CLCV
+            <option>CLSC
+            <option>CPLT
+            <option>CS
+            <option>ECON
+            <option>EDUC
+            <option>ENG
+            <option>ES
+            <option>EXTD
+            <option>FREN
+            <option>GEOS
+            <option>GER
+            <option>GRK
+            <option>HEBR
+            <option>HNUR
+            <option>HIST
+            <option>ITAS
+            <option>JPN
+            <option>KOR
+            <option>LAT
+            <option>LING
+            <option>MATH
+            <option>ME/R
+            <option>MES
+            <option>MUS
+            <option>NEUR
+            <option>PEAC
+            <option>PHIL
+            <option>PHYS
+            <option>POL
+            <option>POL1
+            <option>POL2
+            <option>POL3
+            <option>POL4
+            <option>PORT
+            <option>PSYC
+            <option>QR
+            <option>REL
+            <option>RUSS
+            <option>SAS
+            <option>SOC
+            <option>SPAN
+            <option>SUST
+            <option>SWA
+            <option>THST
+            <option>WGST
+            <option>WRIT
+        </select>
 
-				<select id="distributions" class="searchbox" multiple size="5">
-				<!-- selected attribute makes ALL DEPARTMENTS the default value -->
-				<option selected = "selected">ALL DISTRIBUTION REQUIREMENTS
-				<option>Epistemology and Cognition
-				<option>Historical Studies
-				<option>Language and Literature
-				<option>Mathematical Modeling
-				<option>Natural and Physical Science
-				<option>Basic QR
-				<option>QR Overlay
-				<option>Religion, Ethics and Moral Philosophy
-				<option>Social and Behavioral Analysis
-				<option>Arts, Music, Theatre, Film and Video
-				<option>First-Year Writing
-				<option>None
-				</select>
+        <select id="distributions" class="searchbox" multiple size="5">
+            <!-- selected attribute makes ALL DEPARTMENTS the default value -->
+            <option selected = "selected">ALL DISTRIBUTION REQUIREMENTS
+            <option>Epistemology and Cognition
+            <option>Historical Studies
+            <option>Language and Literature
+            <option>Mathematical Modeling
+            <option>Natural and Physical Science
+            <option>Basic QR
+            <option>QR Overlay
+            <option>Religion, Ethics and Moral Philosophy
+            <option>Social and Behavioral Analysis
+            <option>Arts, Music, Theatre, Film and Video
+            <option>First-Year Writing
+            <option>None
+        </select>
      
-				</select> 
-				<button class="button" id="search_button" type="button" onclick =                                   "search()">Search</button> 
+    </form>
+      
+    <button class="button" id="search_button" type="button" onclick = "search()">Search</button> 
 
 <!--                <iframe src="https://www.google.com/calendar/embed?tab=mc#h"-->
 
 <!--                style=border:"0" width="800" height="600" frameborder="0" scrolling="no"></iframe>-->
-                <div id="results"></div>
     
-                <script src="data.js"></script>
-                <script src="calendar.js"></script>
-                <script src="ui.js"></script>
-                <script src="AM4.js"></script>
+    
+    <div id="results"></div>
+    
+    <script src="data.js"></script>
+    <script src="calendar.js"></script>
+    <script src="ui.js"></script>
+    <script src="AM4.js"></script>
       
-</body> 
+  </body> 
 </html>
 
 
