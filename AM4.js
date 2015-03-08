@@ -105,21 +105,23 @@ function handleAuthClick(event) {
     });
     
     // global variables
-    var coursesByDept = {AFR: [], AMST:[], ANTH:[], ARAB:[], ARTH:[], ARTS: [], ASTR: [], BIOC: [], BISC: [],
-                         CAMS: [], CHEM:[], CHIN:[], CLCV:[], CLSC:[], CPLT:[], CS:[], ECON:[], EDUC: [],
-                         ENG: [], ES: [], EXTD: [], FREN:[], GEOS:[], GER:[], GRK:[], HEBR: [], HNUR: [],
-                         HIST: [], ITAS: [], JPN: [], KOR: [], LAT:[], LING:[], MER:[], MATH:[], MES:[], MUS:[],
-                         NEUR: [], PEAC: [], PHIL: [], PHYS: [], POL: [], POL1:[], POL2:[], POL3:[], POL4:[],
-                         PORT:[], PSYC:[], QR: [], REL:[], RUSS: [], SAS: [], SOC: [], SPAN: [], SUST:[],
-                         SWA:[], THST:[], WGST:[], WRIT:[]};
-    var coursesByReq = { "Epistemology and Cognition":[], "Historical Studies": [], "Language and Literature": [],
-                        "Mathematical Modeling":[], "Natural and Physical Science":[], "Basic QR": [], "QR Overlay": [],
-                        "Religion, Ethics and Moral Philosophy": [], "Social and Behavioral Analysis": [], 
-                        "Arts, Music, Theatre, Film and Video": []};
-    var coursesByLevel = new Object();
-    var coursesByTime = new Object();
+//    var coursesByDept = {AFR: [], AMST:[], ANTH:[], ARAB:[], ARTH:[], ARTS: [], ASTR: [], BIOC: [], BISC: [],
+//                         CAMS: [], CHEM:[], CHIN:[], CLCV:[], CLSC:[], CPLT:[], CS:[], ECON:[], EDUC: [],
+//                         ENG: [], ES: [], EXTD: [], FREN:[], GEOS:[], GER:[], GRK:[], HEBR: [], HNUR: [],
+//                         HIST: [], ITAS: [], JPN: [], KOR: [], LAT:[], LING:[], MER:[], MATH:[], MES:[], MUS:[],
+//                         NEUR: [], PEAC: [], PHIL: [], PHYS: [], POL: [], POL1:[], POL2:[], POL3:[], POL4:[],
+//                         PORT:[], PSYC:[], QR: [], REL:[], RUSS: [], SAS: [], SOC: [], SPAN: [], SUST:[],
+//                         SWA:[], THST:[], WGST:[], WRIT:[]};
+//    var coursesByReq = { "Epistemology and Cognition":[], "Historical Studies": [], "Language and Literature": [],
+//                        "Mathematical Modeling":[], "Natural and Physical Science":[], "Basic QR": [], "QR Overlay": [],
+//                        "Religion, Ethics and Moral Philosophy": [], "Social and Behavioral Analysis": [], 
+//                        "Arts, Music, Theatre, Film and Video": []};
+//    var coursesByLevel = new Object();
+//    var coursesByTime = new Object();
 
     var cleanCourses = new Object();
+    var results =  new Array();
+  
     var thingy;
 
     function processCourses(allCourses){  
@@ -169,7 +171,6 @@ $('#distributions').bind('click', search);
 
 function search()
 {
-  var results =  new Array();
   var results1 = new Array();
   var results2 = new Array();
   
