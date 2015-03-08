@@ -47,7 +47,6 @@
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
     <link rel="stylesheet" href="/resources/demos/style.css">
-    <link rel="stylesheet" href="AM4.css">
     <script>
     $(function() {
     $( "#accordion" ).accordion();
@@ -107,7 +106,7 @@
       
         <form id = "courseSelect">
 				<select id="department" class="searchbox" multiple size="5">
-                <!-- selected attribute makes ALL DEPARTMENTS the default value -->
+				<!-- selected attribute makes ALL DEPARTMENTS the default value -->
 				<option selected="selected">ALL DEPARTMENTS 
 				<option>AFR
 				<option>AMST
@@ -171,7 +170,7 @@
 				</select>
 
 				<select id="distributions" class="searchbox" multiple size="5">
-                <!-- selected attribute makes ALL DEPARTMENTS the default value -->
+				<!-- selected attribute makes ALL DEPARTMENTS the default value -->
 				<option selected = "selected">ALL DISTRIBUTION REQUIREMENTS
 				<option>Epistemology and Cognition
 				<option>Historical Studies
@@ -188,17 +187,7 @@
 				</select>
      
 				</select> 
-        
-               <!--  <script type="text/javascript"> 
-                $(document).ready(function() {
-                    if (!$("#department option:selected").length) {
-                        $("#department option[value='3']").attr('selected', 'selected');
-                    }
-                });-->
-    
-        
-        
-				<button id="search_button" id="searchFieldButton" type="button" onclick =                                   "search()">Search</button> 
+				<button class="button" id="searchFieldButton" type="button" onclick =                                   "search()">Search</button> 
 
 <!--                <iframe src="https://www.google.com/calendar/embed?tab=mc#h"-->
 
