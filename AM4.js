@@ -151,18 +151,10 @@ function handleAuthClick(event) {
         
       }
       
-      console.log(cleanCourses);
+//      console.log(cleanCourses);
       
-    }
+    } //end of processCourses
 
-
-        
-        
-        //when search by dept
-        //loop through crn looking for match for dept
-        //if second condition
-        //loop through subset array that matches 1st condition
-        
   
 //from the course example
 
@@ -192,8 +184,6 @@ function search()
     if (cleanCourses[i].distReqs.indexOf(distChoice) >= 0) {
       results2.push(cleanCourses[i]);
     }
-    
-    
   }
   
   console.log(results1);
@@ -201,9 +191,7 @@ function search()
 
   results = $.intersection(results1, results2);
   console.log(results);
-  
-	
-}
+} //end of search()
 
 $.intersection = function(results1, results2)
 {
