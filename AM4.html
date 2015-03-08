@@ -47,6 +47,7 @@
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
     <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="AM4.css">
     <script>
     $(function() {
     $( "#accordion" ).accordion();
@@ -80,9 +81,7 @@
         
     <div id="reqSearch">
     </div>
-        
-    <div id="results">
-    </div>   
+  
     </div>
 
     <div id="accordion-1">
@@ -187,14 +186,18 @@
 				</select>
      
 				</select> 
-				<button class="button" id="searchFieldButton" type="button" onclick =                                   "search()">Search</button> 
+				<button class="button" id="search_button" type="button" onclick =                                   "search()">Search</button> 
 
 <!--                <iframe src="https://www.google.com/calendar/embed?tab=mc#h"-->
 
 <!--                style=border:"0" width="800" height="600" frameborder="0" scrolling="no"></iframe>-->
                 <div id="results"></div>
     
+                <script src="data.js"></script>
+                <script src="calendar.js"></script>
+                <script src="ui.js"></script>
                 <script src="AM4.js"></script>
+      
 </body> 
 </html>
 
