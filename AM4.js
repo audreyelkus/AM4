@@ -107,25 +107,30 @@ function search()
   console.log(results);	
 } // end of search function
 
- function holdResults(results) {
-        //creatives div with all the results - intersection of results 1 and 2 - in it.
-        var table = document.createElement('table');
-        console.log("hi!!")   
-        table.className = "RESULTS"; 
-        
-        
-    for (i = 0; i < results.length; i++) {
-            var row = document.createElement('tr');
-            row.innerHTML = "<td>" + results[i].title + "</td> <td>" + results[i].shortTitle + "</td>               <td>" + results[i].crn + "</td> <td>" + results[i].curEnroll + "</td>"
-            table.appendChild(row);
-        
-    // why won't this display the results why 
-        
-//            var p = document.createElement('p');
-//            p.innerHTML = 'test'
-//            document.appendChild(p);
-       console.log(table)     
-    } $("#results").appendChild(table);}
+function holdResults(results) {
+  //creatives div with all the results - intersection of results 1 and 2 - in it.
+  var resultTable = document.createElement('table');
+  console.log("hi!!")   
+  resultTable.className = "RESULTS"; 
+          
+  console.log(results);
+  for (i = 0; i < results.length; i++) {
+//    console.log(i);
+//    var row = document.createElement('tr');
+//    row.innerHTML = "<td>" + results[i].title + "</td> <td>" + results[i].shortTitle + "</td> <td>" +
+//      results[i].crn + "</td> <td>" + results[i].curEnroll + "</td>"
+//    resultTable.appendChild(row);
+//
+//  // why won't this display the results why 
+//        
+//            var thing = document.createElement('p');
+//            thing.innerHTML = 'test'
+//            console.log("hello");
+//            document.appendChild(thing);
+//       console.log(resultTable)     
+    } 
+//   $("#results").append(resultTable);
+ }
 
 $('#search_button').bind('click', holdResults);
 
