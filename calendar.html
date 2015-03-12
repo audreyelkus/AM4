@@ -29,13 +29,19 @@
         gapi.client.load('urlshortener', 'v1').then(makeRequest);
       }
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=init"></script>
-      <script src="AM4.js"></script>
+    
   </head>
   <body> 
        <iframe src="https://www.google.com/calendar/embed?tab=mc#h"
 
 style=border:"0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     <div id="results"></div>
+    
+    <script src="data.js"></script>
+    <script src="calendar.js"></script>
+    <script src="ui.js"></script>
+    <script src="AM4.js"></script>
   </body>
 </html>
