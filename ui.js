@@ -14,12 +14,15 @@ function search()
   
   var dept = document.getElementById('department');
   var deptChoice = dept.options[dept.selectedIndex].text;
+  if (deptChoice.indexOf("ALL")>= 0) deptChoice = "";
   
   var dist = document.getElementById('distributions');
   var distChoice = dist.options[dist.selectedIndex].text;
+  if (distChoice.indexOf("ALL")>= 0) distChoice = "";
   
   var times = document.getElementById('times');
   var timeChoice = times.options[times.selectedIndex].text;
+  if (timeChoice.indexOf("ALL")>= 0) timeChoice = "";
   
   console.log(deptChoice);
   console.log(distChoice);
