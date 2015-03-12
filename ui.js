@@ -1,17 +1,25 @@
-$('#department').bind('click', search);
-$('#distributions').bind('click', search);
+//
+//Susie Carovillano
+
+var results =  new Array();
+
+//bind search button to search function
+$('#search_button').bind('click', search);
 
 function search()
 { 
   var results1 = new Array();
   var results2 = new Array();
-  
+  var results3 = new Array();
   
   var dept = document.getElementById('department');
   var deptChoice = dept.options[dept.selectedIndex].text;
   
   var dist = document.getElementById('distributions');
   var distChoice = dist.options[dist.selectedIndex].text;
+  
+  var times = document.getElementById('times');
+  var timeChoice = times.options[times.selectedIndex].text;
   
   console.log(deptChoice);
   console.log(distChoice);
@@ -24,13 +32,27 @@ function search()
     if (cleanCourses[i].distReqs.indexOf(distChoice) >= 0) {
       results2.push(cleanCourses[i]);
     }
+    
+    if (cleanCourses[i].meetTimes.indexOf(timeChoice) >= 0) {
+      results3.push(cleanCourses[i]);
+    }
   }
   
+  console.log("1");
   console.log(results1);
+  console.log("2");
   console.log(results2);
+  console.log("3");
+  console.log(results3);
 
-  results = $.intersection(results1, results2);
+  var resultsStep = $.intersection(results1, results2); //filters by dist and department
+  results = $.intersection(resultsStep, results3); //filters by time
+  
+  console.log("meets all filters");
   console.log(results);
+  
+  //puts results on html page
+  holdResults();
 } //end of search()
 
 $.intersection = function(results1, results2)
@@ -41,12 +63,11 @@ $.intersection = function(results1, results2)
     });
 };
 
-$('#search_button').bind('click', holdResults);
 
 function holdResults() {
     //clear prior results
   $("#results").html("");
-  
+    
   //creatives div with all the results - intersection of results 1 and 2 - in it.
   var resultTable = document.createElement('table');
   console.log("hi!!")   
@@ -59,7 +80,7 @@ function holdResults() {
     console.log(i);
     var row = document.createElement('tr');
     row.innerHTML = "<td>" + results[i].title + "</td> <td>" + results[i].shortTitle + "</td> <td>" +
-      results[i].crn + "</td> <td>" + results[i].curEnroll + "</td>"
+      results[i].crn + "</td> <td>" + results[i].meetTimes + "</td>"
     resultTable.appendChild(row);
     } 
    $("#results").append(resultTable);
